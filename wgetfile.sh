@@ -16,6 +16,12 @@
 sudo $(command -v apt) update -yqq && sudo $(command -v apt) upgrade -yqq
 
 if [[ ! -x $(command -v git) ]];then sudo $(command -v apt) install git -yqq;fi
+##migrate from multirepo to one
+old="/opt/apps /opt/gdsa /opt/traefik"
+for i in ${old}; do
+  if [[ -d "$i" ]];then $(command -v rm) -rf $i;fi
+done
+##migrate from multirepo to one
 if [[ -d "/opt/dockserver" ]];then
     sudo $(command -v rm) -rf /opt/dockserver
     sudo git clone --quiet https://github.com/dockserver/dockserver.git /opt/dockserver
