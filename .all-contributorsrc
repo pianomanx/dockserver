@@ -75,6 +75,16 @@
         "bug",
         "test"
       ]
+    },
+    {
+      "login": "hawks",
+      "name": "hawks",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1499891?v=4",
+      "profile": "https://github.com/Hawks",
+      "contributions": [
+        "bug",
+        "test"
+      ]
     }
   ],
   "badgeTemplate": "<a href=\"#contributors-\"><img alt=\"All Contributors\" src=\"https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg\"/></a>",
