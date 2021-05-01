@@ -36,7 +36,7 @@ tee <<-EOF
     [ 1 ] GDRIVE 
     [ 2 ] TDRIVE
     [ 3 ] GCRYPT
-    [ 4 ] TCRYT
+    [ 4 ] TCRYPT
     [ 5 ] RCLONE UNION 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -45,46 +45,29 @@ tee <<-EOF
 EOF
   read -erp "↘️  Type Number and Press [ENTER]: " headsection </dev/tty
   case $headsection in
-    1) clear && gdrive ;;
-    2) clear && tdrive ;;
-    3) clear && gcrypt ;;
-    4) clear && tcrypt ;;
+    1) clear && LOCATION=${gdrive} && selection ;;
+    2) clear && LOCATION=${tdrive} && selection ;;
+    3) clear && LOCATION=${gcrypt} && selection ;;
+    4) clear && LOCATION=${tcrypt} && selection ;;
+    4) clear && LOCATION=${union} && selection ;;
     #help|HELP|Help) clear && sectionhelplayout ;;
     Z|z|exit|EXIT|Exit|close) exit ;;
     *) appstartup ;;
   esac
 }
 ##
-gdrive() {
-
-echo " gdrive used "
-
+selection() {
+#VALUES
+LOCATION=${LOCATION}
+case $(. /etc/os-release && echo "$ID") in
+    ubuntu)     type="ubuntu" ;;
+    debian)     type="ubuntu" ;;
+    rasbian)    type="ubuntu" ;;
+    *)          type='' ;;
+esac
+if [[ -f ./.installer/${LOCATION}/$type.${LOCATION}.sh ]];then bash ./.installer/${LOCATION}/$type.${LOCATION}.sh;fi
+echo "gdrive used "
 }
 ##
-gcrypt() {
-
-echo " gcrypt used "
-
-}
-##
-tdrive() {
-
-echo " tdrive used "
-
-}
-##
-tcrypt() {
-
-echo " tcrypt used "
-
-}
-union() {
-
-echo " union used "
-
-}
-
-
-
-
 appstartup
+#EOF
