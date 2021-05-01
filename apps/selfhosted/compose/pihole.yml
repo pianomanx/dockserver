@@ -23,11 +23,11 @@ services:
     environment:
       - 'PGID=${ID}'
       - 'PUID=${ID}'
-      - DNS1=1.1.1.1
-      - DNS2=8.8.8.8
-      - ServerIP=${SERVERIP}
-      - TZ=${TZ}
-      - WEBPASSWORD=WEBPASSWORD
+      - 'DNS1=1.1.1.1'
+      - 'DNS2=8.8.8.8'
+      - 'ServerIP=${SERVERIP}'
+      - 'TZ=${TZ}'
+      - 'WEBPASSWORD=WEBPASSWORD'
     restart: unless-stopped
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -42,7 +42,7 @@ services:
       - 'traefik.http.routers.pihole-rtr.tls=true'
       - 'traefik.http.routers.pihole-rtr.tls.certresolver=dns-cloudflare'
       - 'traefik.http.routers.pihole-rtr.middlewares=chain-authelia@file'
-      - 'traefik.http.routers.pihole-rtr.service=gotify-svc'
+      - 'traefik.http.routers.pihole-rtr.service=pihole-svc'
       - 'traefik.http.services.pihole-svc.loadbalancer.server.port=80'
 
 networks:
