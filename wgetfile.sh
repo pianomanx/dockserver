@@ -18,9 +18,9 @@ sudo $(command -v apt) update -yqq && sudo $(command -v apt) upgrade -yqq
 if [[ ! -x $(command -v git) ]];then sudo $(command -v apt) install git -yqq;fi
 if [[ -d "/opt/dockserver" ]];then
     sudo $(command -v rm) -rf /opt/dockserver
-    sudo git clone --quiet https://github.com/dockserver/onerepo.git /opt/dockserver
+    sudo git clone --quiet https://github.com/dockserver/dockserver.git /opt/dockserver
 else
-    sudo git clone --quiet https://github.com/dockserver/onerepo.git /opt/dockserver
+    sudo git clone --quiet https://github.com/dockserver/dockserver.git /opt/dockserver
 fi
 
 cd /opt/dockserver && $(command -v bash) install.sh
