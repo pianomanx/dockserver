@@ -86,7 +86,7 @@ EOF
   read -erp "↘️  Type R|r and Press [ENTER]: " headsectionforce </dev/tty
   case $headsectionforce in
     R|r|remove|y|Y) clear && remove ;;
-    help|HELP|Help) clear && helplayout ;;
+    help|HELP|Help) clear && LOCATION=help && selection ;;
     Z|z|exit|EXIT|Exit|close) clear && interface ;;
     *) appstartup ;;
   esac
