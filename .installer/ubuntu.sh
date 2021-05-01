@@ -25,13 +25,13 @@ exit 0
 fi
 while true; do
   $(command -v apt) update -yqq && $(command -v apt) upgrade -yqq
-  if [[ ! -x $(command -v git) ]];then sudo $(command -v apt) install git -yqq;fi
-  if [[ -d "/opt/dockserver/traefik " ]];then $(command -v rm) -rf /opt/dockserver/traefik;fi
-  if [[ ! -d "/opt/dockserver/traefik" ]];then sudo git clone --quiet https://github.com/dockserver/traefik.git /opt/dockserver/traefik;fi
-  if [[ -d "/opt/dockserver/apps" ]];then $(command -v rm) -rf /opt/dockserver/apps;fi
-  if [[ ! -d "/opt/dockserver/apps" ]];then sudo git clone --quiet https://github.com/dockserver/apps.git /opt/dockserver/apps;fi
-  if [[ -d "/opt/dockserver/gdsa" ]];then $(command -v rm) -rf /opt/dockserver/gdsa;fi
-  if [[ ! -d "/opt/dockserver/gdsa" ]];then sudo git clone --quiet https://github.com/dockserver/gdsa.git /opt/dockserver/gdsa;fi  
+  #if [[ ! -x $(command -v git) ]];then sudo $(command -v apt) install git -yqq;fi
+  #if [[ -d "/opt/dockserver/traefik " ]];then $(command -v rm) -rf /opt/dockserver/traefik;fi
+  #if [[ ! -d "/opt/dockserver/traefik" ]];then sudo git clone --quiet https://github.com/dockserver/traefik.git /opt/dockserver/traefik;fi
+  #if [[ -d "/opt/dockserver/apps" ]];then $(command -v rm) -rf /opt/dockserver/apps;fi
+  #if [[ ! -d "/opt/dockserver/apps" ]];then sudo git clone --quiet https://github.com/dockserver/apps.git /opt/dockserver/apps;fi
+  #if [[ -d "/opt/dockserver/gdsa" ]];then $(command -v rm) -rf /opt/dockserver/gdsa;fi
+  #if [[ ! -d "/opt/dockserver/gdsa" ]];then sudo git clone --quiet https://github.com/dockserver/gdsa.git /opt/dockserver/gdsa;fi  
   clear && headinterface
 done
 }
