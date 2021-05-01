@@ -1,21 +1,5 @@
+---
 version: '3'
-
-networks:
-  proxy:
-    driver: bridge
-    external: true
-    name: proxy
-  default:
-volumes:
-  staticfiles:
-    driver: local-persist
-    driver_opts:
-      mountpoint: /opt/appdata/recipes/staticfiles
-  nginx_config:
-    driver: local-persist
-    driver_opts:
-      mountpoint: /opt/appdata/recipes/nginx_config
-
 services:
   db_recipes:
     container_name: db_recipes
@@ -118,3 +102,20 @@ services:
       - 'nginx_config:/etc/nginx/conf.d:ro'
       - 'staticfiles:/static'
       - '/opt/appdata/recipes/mediafiles:/media'
+
+networks:
+  proxy:
+    driver: bridge
+    external: true
+    name: proxy
+  default:
+
+volumes:
+  staticfiles:
+    driver: local-persist
+    driver_opts:
+      mountpoint: '/opt/appdata/recipes/staticfiles'
+  nginx_config:
+    driver: local-persist
+    driver_opts:
+      mountpoint: '/opt/appdata/recipes/nginx_config'
