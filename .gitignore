@@ -1,0 +1,15 @@
+.all-contributorsrc
+LICENSE
+composer.phar
+/vendor/
+/logo
+./github
+LICENSE
+*.md
+*.json
+/docs/*
+.editorconfig
+*.sample
+*.all-contributorsrc
+.gitignore
+wgetfile.sh
