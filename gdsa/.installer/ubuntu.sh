@@ -124,32 +124,15 @@ EOF
   read -erp "Confirm Info | PRESS [ENTER] " input </dev/tty
   if [[ "$input" = "confirm" ]];then sleep 4 && clear && checkfields && interface; else nofound;fi
 }
-helplayout() {
+selection() {
+LOCATION=${LOCATION}
 case $(. /etc/os-release && echo "$ID") in
     ubuntu)     type="ubuntu" ;;
     debian)     type="ubuntu" ;;
     rasbian)    type="ubuntu" ;;
     *)          type='' ;;
 esac
-if [[ -f ./.installer/.help/$type.help.sh ]];then bash ./.installer/.help/$type.help.sh;fi
-}
-case1() {
-case $(. /etc/os-release && echo "$ID") in
-    ubuntu)     type="ubuntu" ;;
-    debian)     type="ubuntu" ;;
-    rasbian)    type="ubuntu" ;;
-    *)          type='' ;;
-esac
-if [[ -f ./.installer/.case1/$type.case1.sh ]];then bash ./.installer/.case1/$type.case1.sh;fi
-}
-case2() {
-case $(. /etc/os-release && echo "$ID") in
-    ubuntu)     type="ubuntu" ;;
-    debian)     type="ubuntu" ;;
-    rasbian)    type="ubuntu" ;;
-    *)          type='' ;;
-esac
-if [[ -f ./.installer/.case2/$type.case2.sh ]];then bash ./.installer/.case2/$type.case2.sh;fi
+if [[ -f ./.installer/.${LOCATION}/$type.${LOCATION}.sh ]];then bash ./.installer/.${LOCATION}/$type.${LOCATION}.sh;fi
 }
 interface() {
 tee <<-EOF
@@ -167,10 +150,10 @@ tee <<-EOF
 EOF
   read -erp "↘️  Type Number and Press [ENTER]: " headsection </dev/tty
   case $headsection in
-    1) clear && case1 ;;
-    2) clear && case2 ;;
+    1) clear && LOCATION=case1 && selection ;;
+    2) clear && LOCATION=case2 && selection;;
     3) clear && forcereset ;;
-    help|HELP|Help) clear && helplayout ;;
+    help|HELP|Help) clear && LOCATION=help && selection ;;
     Z|z|exit|EXIT|Exit|close) exit ;;
     *) appstartup ;;
   esac
