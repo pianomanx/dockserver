@@ -1,4 +1,4 @@
-#####################################
+####################################
 # All rights reserved.              #
 # started from Zero                 #
 # Docker owned dockserver           #
@@ -14,11 +14,15 @@
 # shellcheck disable=SC2006
 
 sudo $(command -v apt) update -yqq && sudo $(command -v apt) upgrade -yqq
+
 if [[ ! -x $(command -v git) ]];then sudo $(command -v apt) install git -yqq;fi
 if [[ -d "/opt/dockserver" ]];then
     sudo $(command -v rm) -rf /opt/dockserver
     sudo git clone --quiet https://github.com/dockserver/onerepo.git /opt/dockserver
-if [[ ! -d "/opt/dockserver" ]];then
-    sudo git clone --quiet https://github.com/dockserver/dockserver.git /opt/dockserver
+else
+    sudo git clone --quiet https://github.com/dockserver/onerepo.git /opt/dockserver
 fi
-cd /opt/installer && $(command -v bash) install.sh
+
+cd /opt/dockserver && $(command -v bash) install.sh
+
+#EOF
