@@ -12,7 +12,10 @@
 #####################################
 # shellcheck disable=SC2086
 # shellcheck disable=SC2006
-sudo $(command -v apt) update -yqq && sudo $(command -v apt) upgrade -yqq
+updates="update upgrade autoremove autoclean"
+for upp in ${updates};do
+ sudo $(command -v apt) $upp -yqq 1>/dev/null 2>&1 && clear
+done
 if [[ -f "/bin/dockserver" ]];then $(command -v rm) -rf /bin/dockserver;fi
 if [[ ! -f "/bin/dockserver" ]];then
 cat <<'EOF' > /bin/dockserver
@@ -30,7 +33,11 @@ cat <<'EOF' > /bin/dockserver
 #####################################
 # shellcheck disable=SC2086
 # shellcheck disable=SC2006
-sudo $(command -v apt) update -yqq && sudo $(command -v apt) upgrade -yqq
+updates="update upgrade autoremove autoclean"
+for upp in ${updates};do
+ sudo $(command -v apt) $upp -yqq 1>/dev/null 2>&1
+done
+clear
 if [[ ! -x $(command -v git) ]];then sudo $(command -v apt) install git -yqq;fi
 ##migrate from multirepo to one
 old="/opt/apps /opt/gdsa /opt/traefik /opt/installer"
