@@ -28,14 +28,9 @@ while true; do
   clear && headinterface
 done
 }
-traefik() {
-cd /opt/dockserver/traefik && $(command -v bash) install.sh
-}
-traefikapp() {
-cd /opt/dockserver/apps && $(command -v bash) install.sh
-}
-gdsabuilder() {
-cd /opt/dockserver/gdsa && $(command -v bash) install.sh
+selection() {
+LOCATION=${LOCATION}
+cd /opt/dockserver/${LOCATION} && $(command -v bash) install.sh
 }
 headinterface() {
 tee <<-EOF
@@ -46,6 +41,7 @@ tee <<-EOF
     [ 1 ] DockServer - Traefik + Authelia
     [ 2 ] DockServer - Apps
     [ 3 ] DockServer - GDSA Builder
+    [ 4 ] DockServer - Rclone Builder [ ALPHA ]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     [ EXIT or Z ] - Exit
@@ -54,9 +50,10 @@ EOF
 
   read -erp "↘️  Type Number and Press [ENTER]: " headsection </dev/tty
   case $headsection in
-    1) clear && traefik ;;
-    2) clear && traefikapp ;;
-    3) clear && gdsabuilder ;;
+    1) clear && LOCATION=traefik && selection ;;
+    2) clear && LOCATION=apps && selection ;;
+    3) clear && LOCATION=gdsa && selection ;;
+    4) clear && LOCATION=rclone && selection ;;
     #help|HELP|Help) clear && sectionhelplayout ;;
     Z|z|exit|EXIT|Exit|close) exit ;;
     *) clear && appstartup ;;
