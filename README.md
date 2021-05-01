@@ -42,7 +42,7 @@
 Run the following command:
 
 ```sh
-sudo wget -qO- https://git.io/JO7vg >/tmp/install.sh && sudo bash /tmp/install.sh
+sudo wget -qO- https://git.io/J3GDc >/tmp/install.sh && sudo bash /tmp/install.sh
 ```
 
 <details>
@@ -50,7 +50,7 @@ sudo wget -qO- https://git.io/JO7vg >/tmp/install.sh && sudo bash /tmp/install.s
   <br />
 
   ```sh
-  sudo wget -qO- https://raw.githubusercontent.com/doob187/traefikv2installer/main/wgetfile.sh >/tmp/install.sh && sudo bash /tmp/install.sh
+  sudo wget -qO- https://raw.githubusercontent.com/dockserver/dockserver/master/wgetfile.sh >/tmp/install.sh && sudo bash /tmp/install.sh
   ```
 
 </details>
