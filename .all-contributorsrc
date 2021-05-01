@@ -36,7 +36,10 @@
       "profile": "https://github.com/aelfa",
       "contributions": [
         "test",
-        "bug"
+        "bug",
+        "infra",
+        "code",
+        "content"
       ]
     },
     {
