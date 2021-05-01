@@ -9,7 +9,7 @@ services:
       - 'PGID=${ID}'
       - 'PUID=${ID}'
       - 'TZ=${TZ}'
-    image: 'bitwardenrs/server'
+    image: 'vaultwarden/server'
     networks:
       - proxy
     restart: 'unless-stopped'
