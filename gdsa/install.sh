@@ -2,7 +2,7 @@
 # shellcheck shell=bash
 #
 # Title:      headinstaller based of matched OS 
-# Author(s):  mrdoob
+# Author(s):  dockserver
 # GNU:        General Public License v3.0
 ################################################
 # Idea from poppabear8883 from UNIT3D
