@@ -535,6 +535,8 @@ if [[ -f $basefolder/$compose ]];then
         Traefik:    https://traefik.${DOMAIN}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
+  sleep 10
+   read -erp "Confirm Info | PRESS [ENTER]" typed </dev/tty
 clear && interface
 fi
 }
