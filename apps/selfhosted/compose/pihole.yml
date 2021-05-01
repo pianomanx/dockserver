@@ -9,9 +9,9 @@ services:
     ports:
       - 446:443
       - 8008:80
-      - 53:53
-      - 53:53/udp
-      - 67:67/udp
+      - ${SERVERIP}:53:53
+      - ${SERVERIP}:53:53/udp
+      - ${SERVERIP}:67:67/udp
     cap_add:
       - NET_ADMIN
     networks:
@@ -21,9 +21,11 @@ services:
       - 1.1.1.1
       - 8.8.8.8
     environment:
+      - 'PGID=${ID}'
+      - 'PUID=${ID}'
       - DNS1=1.1.1.1
       - DNS2=8.8.8.8
-      - ServerIP=0.0.0.0
+      - ServerIP=${SERVERIP}
       - TZ=${TZ}
       - WEBPASSWORD=WEBPASSWORD
     restart: unless-stopped
