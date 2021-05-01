@@ -64,14 +64,13 @@ Kindly report any issues/broken-parts/bugs on [github](https://github.com/dockse
 ## Code and Permissions
 
 ```sh
-Copyright 2021 @doobsi
-Code owner @doobsi @mrfret
-Dev Code @doobsi
-Co-Dev -APPS- @mrfret
+Copyright 2021 @dockserver
+Code owner @dockserver
+Dev Code @dockserver
+Co-Dev -APPS- @CONTRIBUTORS-LIST
 ```
 
-**Only @mrfret and @doobsi have access
-to change or proof any Pull Request**
+
 
 ----
 
