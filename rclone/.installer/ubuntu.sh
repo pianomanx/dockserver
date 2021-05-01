@@ -45,11 +45,11 @@ tee <<-EOF
 EOF
   read -erp "↘️  Type Number and Press [ENTER]: " headsection </dev/tty
   case $headsection in
-    1) clear && LOCATION=${gdrive} && selection ;;
-    2) clear && LOCATION=${tdrive} && selection ;;
-    3) clear && LOCATION=${gcrypt} && selection ;;
-    4) clear && LOCATION=${tcrypt} && selection ;;
-    5) clear && LOCATION=${union} && selection ;;
+    1) clear && LOCATION=gdrive && selection ;;
+    2) clear && LOCATION=tdrive && selection ;;
+    3) clear && LOCATION=gcrypt && selection ;;
+    4) clear && LOCATION=tcrypt && selection ;;
+    5) clear && LOCATION=union && selection ;;
     #help|HELP|Help) clear && sectionhelplayout ;;
     Z|z|exit|EXIT|Exit|close) exit ;;
     *) appstartup ;;
@@ -66,7 +66,6 @@ case $(. /etc/os-release && echo "$ID") in
     *)          type='' ;;
 esac
 if [[ -f ./.installer/${LOCATION}/$type.${LOCATION}.sh ]];then bash ./.installer/${LOCATION}/$type.${LOCATION}.sh;fi
-echo "gdrive used "
 }
 ##
 appstartup
