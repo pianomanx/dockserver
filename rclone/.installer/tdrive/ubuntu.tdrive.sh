@@ -28,7 +28,7 @@ while true; do
 done
 }
 headinterface() {
-echo "tdrive used "
+echo "tdrive used " && sleep 5 && exit 
 }
 ##
 appstartup

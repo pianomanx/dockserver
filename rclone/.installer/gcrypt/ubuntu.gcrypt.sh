@@ -29,6 +29,7 @@ done
 }
 headinterface() {
 echo "gcrypt used "
+sleep 5 && exit 
 }
 ##
 appstartup

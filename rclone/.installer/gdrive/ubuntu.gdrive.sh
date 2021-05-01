@@ -29,6 +29,7 @@ done
 }
 headinterface() {
 echo "gdrive used "
+sleep 5 && exit 
 }
 ##
 appstartup

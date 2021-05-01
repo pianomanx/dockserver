@@ -28,7 +28,7 @@ while true; do
 done
 }
 headinterface() {
-echo "tcrypt used "
+echo "tcrypt used " && sleep 5 && exit 
 }
 ##
 appstartup

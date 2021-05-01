@@ -28,7 +28,8 @@ while true; do
 done
 }
 headinterface() {
-echo "union used "
+echo " rclone union builder "
+sleep 5 && exit 
 }
 ##
 appstartup
