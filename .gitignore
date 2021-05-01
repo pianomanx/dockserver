@@ -3,8 +3,13 @@
 LICENSE
 composer.phar
 /vendor/
-./github
+./github**
 LICENSE
 *.md
 *.json
-/logo
+CODE_OF_CONDUCT.md
+LICENSE
+README.md
+backup.sh
+wgetfile.sh
+.all-contributorsrc
