@@ -49,7 +49,7 @@ EOF
     2) clear && LOCATION=${tdrive} && selection ;;
     3) clear && LOCATION=${gcrypt} && selection ;;
     4) clear && LOCATION=${tcrypt} && selection ;;
-    4) clear && LOCATION=${union} && selection ;;
+    5) clear && LOCATION=${union} && selection ;;
     #help|HELP|Help) clear && sectionhelplayout ;;
     Z|z|exit|EXIT|Exit|close) exit ;;
     *) appstartup ;;
