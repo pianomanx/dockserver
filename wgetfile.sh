@@ -30,6 +30,7 @@ for i in ${old}; do
 done
 ###
 cat <<'EOF' > /bin/dockserver
+#!/usr/bin/bash
 ####################################
 # All rights reserved.              #
 # started from Zero                 #
