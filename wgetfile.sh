@@ -23,7 +23,6 @@ if [[ -f "/usr/bin/dockserver" ]];then $(command -v rm) -rf /usr/bin/dockserver;
 
 if [[ ! -f "/bin/dockserver" ]];then
 cat <<'EOF' > /bin/dockserver
-#!/usr/bin/with-contenv bash
 ####################################
 # All rights reserved.              #
 # started from Zero                 #
