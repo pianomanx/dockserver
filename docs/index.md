@@ -37,6 +37,8 @@
 5. `Tls min = 1.2`
 6. `TLS = v1.3`
 
+----
+
 ## Easy Mode install
 
 Run the following command:
@@ -56,6 +58,8 @@ sudo wget -qO- https://git.io/J3GDc | sudo bash
 
 </details>
 
+----
+
 ## Support
 
 Kindly report any issues/broken-parts/bugs on [github](https://github.com/dockserver/dockserver/issues) or [discord](https://discord.gg/A7h7bKBCVa)
@@ -71,7 +75,9 @@ Dev Code @dockserver
 Co-Dev -APPS- @CONTRIBUTORS-LIST
 ```
 
+----
 
+<!--START_SECTION:activity-->
 
 ----
 
