@@ -17,7 +17,10 @@ updates="update upgrade autoremove autoclean"
 for upp in ${updates};do
  sudo $(command -v apt) $upp -yqq 1>/dev/null 2>&1 && clear
 done
+
 if [[ -f "/bin/dockserver" ]];then $(command -v rm) -rf /bin/dockserver;fi
+if [[ -f "/usr/bin/dockserver" ]];then $(command -v rm) -rf /usr/bin/dockserver;fi
+
 if [[ ! -f "/bin/dockserver" ]];then
 cat <<'EOF' > /bin/dockserver
 #!/usr/bin/with-contenv bash
@@ -57,6 +60,7 @@ cd /opt/dockserver && $(command -v bash) install.sh
 #EOF
 EOF
   sudo $(command -v chmod) 755 /bin/dockserver
+  if [[ -f "/bin/dockserver" ]];then cp -r /bin/dockserver /usr/bin/dockserver;fi
   sudo $(command -v chmod) 755 /usr/bin/dockserver
 
 fi
