@@ -60,9 +60,6 @@ cd /opt/dockserver && $(command -v bash) install.sh
 #EOF
 EOF
   sudo $(command -v chmod) 755 /bin/dockserver
-  if [[ -f "/bin/dockserver" ]];then cp -r /bin/dockserver /usr/bin/dockserver;fi
-  sudo $(command -v chmod) 755 /usr/bin/dockserver
-
 fi
 
 tee <<-EOF
