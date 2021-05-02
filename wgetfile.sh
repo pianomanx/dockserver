@@ -26,9 +26,9 @@ if [[ ! -x $(command -v git) ]];then sudo $(command -v apt) install git -yqq;fi
 ##migrate from multirepo to one
 old="/opt/apps /opt/gdsa /opt/traefik /opt/installer"
 for i in ${old}; do
-    if [[ -d "$i" ]];then $(command -v rm) -rf $i;fi
+   sudo $(command -v rm) -rf $i
 done
-
+###
 cat <<'EOF' > /bin/dockserver
 ####################################
 # All rights reserved.              #
