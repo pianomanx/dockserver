@@ -70,7 +70,9 @@ Dev Code @dockserver
 Co-Dev -APPS- @CONTRIBUTORS-LIST
 ```
 
+~~~~
 
+<!--START_SECTION:activity-->
 
 ----
 
