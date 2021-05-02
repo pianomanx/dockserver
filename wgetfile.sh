@@ -67,11 +67,5 @@ tee <<-EOF
       type dockserver || sudo dockserver
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         [ Press ENTER to EXIT ]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
-  read -erp "↘️ Press [ENTER]: " headsection </dev/tty
-  case $headsection in
-      *) exit ;;
-  esac
-#EO
+
