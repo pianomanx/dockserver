@@ -37,14 +37,14 @@ cat <<'EOF' > /bin/dockserver
 # shellcheck disable=SC2006
 updates="update upgrade autoremove autoclean"
 for upp in ${updates};do
- sudo $(command -v apt) $upp -yqq 1>/dev/null 2>&1
+    sudo $(command -v apt) $upp -yqq 1>/dev/null 2>&1
 done
 clear
 if [[ ! -x $(command -v git) ]];then sudo $(command -v apt) install git -yqq;fi
 ##migrate from multirepo to one
 old="/opt/apps /opt/gdsa /opt/traefik /opt/installer"
 for i in ${old}; do
-  if [[ -d "$i" ]];then $(command -v rm) -rf $i;fi
+    if [[ -d "$i" ]];then $(command -v rm) -rf $i;fi
 done
 ##migrate from multirepo to one
 if [[ -d "/opt/dockserver" ]];then
@@ -57,6 +57,8 @@ cd /opt/dockserver && $(command -v bash) install.sh
 #EOF
 EOF
   sudo $(command -v chmod) 755 /bin/dockserver
+  sudo $(command -v chmod) 755 /usr/bin/dockserver
+
 fi
 
 tee <<-EOF
